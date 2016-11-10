@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}User Edit{% endblock page_title %}
+{% block page_header %}User Edit{% endblock %}
+
+{% block layout %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-info btn-md" value="Update" />
+    <a href="{% url "user_list" %}" class="btn btn-default btn-md">Back</a>
+</form>
+{% endblock %}

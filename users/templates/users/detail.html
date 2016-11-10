@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_title %}User Detail{% endblock page_title %}
+{% block page_header %}User Detail{% endblock %}
+
+{% block layout %}
+<div class="col-xs-12 col-sm-6 col-md-6 mar-t-10">
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <img src="http://placehold.it/380x500" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-sm-6 col-md-8">
+                <h4>{{ user.username }}</h4>
+                <p>
+                    <i class="glyphicon glyphicon-gift mar-r-10 mar-b-10"></i>{{ user.birthday }}
+                    <br />
+					<i class="glyphicon glyphicon-globe mar-r-10 mar-b-10"></i>{{ user.random_number }}
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12">
+<a href="{% url "user_edit" user.id %}" class="btn btn-info btn-md">Edit User</a>
+<a href="{% url "user_list" %}" class="btn btn-info btn-md">Back</a>
+</div>
+{% endblock %}
